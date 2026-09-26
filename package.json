@@ -1,0 +1,65 @@
+{
+  "name": "twenty-apollo-enrichment",
+  "version": "0.1.0",
+  "description": "Open-source Apollo.io enrichment for People and Companies in Twenty CRM that behaves/works AS EXPECTED and people can ACTUALLY contribute to...",
+  "license": "MIT",
+  "keywords": [
+    "twenty-app",
+    "twenty",
+    "twenty-crm",
+    "apollo",
+    "apollo.io",
+    "crm",
+    "enrichment"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whrit/twenty-apollo-enrichment.git"
+  },
+  "homepage": "https://github.com/whrit/twenty-apollo-enrichment#readme",
+  "bugs": {
+    "url": "https://github.com/whrit/twenty-apollo-enrichment/issues"
+  },
+  "engines": {
+    "node": ">=24.18.0",
+    "twenty": ">=2.42.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@12.4.2",
+  "scripts": {
+    "twenty": "twenty",
+    "dev": "twenty dev",
+    "build": "twenty dev:build",
+    "build:tarball": "twenty dev:build --tarball",
+    "typecheck": "tsc --noEmit -p tsconfig.spec.json",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint . --fix",
+    "format": "oxfmt . --write",
+    "format:check": "oxfmt . --check",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check:release": "node scripts/check-release-metadata.mjs",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "prepublishOnly": "pnpm check:release && pnpm check"
+  },
+  "dependencies": {
+    "@sniptt/guards": "0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "oxfmt": "0.68.0",
+    "oxlint": "1.83.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "twenty-client-sdk": "2.42.0",
+    "twenty-sdk": "2.42.0",
+    "typescript": "6.0.3",
+    "vite-tsconfig-paths": "^6.1.1",
+    "vitest": "^5.0.1"
+  },
+  "author": "whrit"
+}

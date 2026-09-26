@@ -1,0 +1,136 @@
+import {
+  defineView,
+  STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS,
+  ViewType,
+} from 'twenty-sdk/define';
+
+export default defineView({
+  universalIdentifier: 'fe578b7f-9e4d-4960-bb66-66b63450194e',
+  name: 'Enriched (Apollo)',
+  icon: 'IconSparkles',
+  objectUniversalIdentifier:
+    STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.person.universalIdentifier,
+  type: ViewType.TABLE,
+  fields: [
+    {
+      universalIdentifier: '26639273-a64e-4607-b9e9-475dfcf6620f',
+      fieldMetadataUniversalIdentifier: '20202020-3875-44d5-8c33-a6239011cab8',
+      position: 0,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '4f9a5e8c-eaf2-4cbc-ae68-878e463a4c53',
+      fieldMetadataUniversalIdentifier: '20202020-b0d0-415a-bef9-640a26dacd9b',
+      position: 1,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '19629b9a-d5a4-495c-ad62-66abb452dab4',
+      fieldMetadataUniversalIdentifier: '20202020-e2f3-448e-b34c-2d625f0025fd',
+      position: 2,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '21f529ae-a7ca-4c27-89e0-193ec29bacf3',
+      fieldMetadataUniversalIdentifier: '20202020-3c51-43fa-8b6e-af39e29368ab',
+      position: 3,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '7f5189b2-8e78-4158-b1fa-63228360e473',
+      fieldMetadataUniversalIdentifier: '20202020-0638-448e-8825-439134618022',
+      position: 4,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '21aabf79-8ea6-47ab-8ee9-1f46891a0e0d',
+      fieldMetadataUniversalIdentifier: '20202020-f1af-48f7-893b-2007a73dd508',
+      position: 5,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: 'e82ef58c-2cbd-4297-9d25-3613bf78ebf1',
+      fieldMetadataUniversalIdentifier: '20202020-b8a6-40df-961c-373dc5d2ec21',
+      position: 6,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '9c410a17-190b-4bcc-9ec4-516f6a01ebc2',
+      fieldMetadataUniversalIdentifier: 'ce608810-a901-498d-93f3-5f0f3bec459a',
+      position: 7,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '5b8343ad-143c-46bc-ac1c-6b211d0bdbfc',
+      fieldMetadataUniversalIdentifier: '3706312e-d525-4c93-8046-1dcebcf1bc85',
+      position: 8,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: 'b4226ef9-499b-48f8-bb2c-4792826e49f6',
+      fieldMetadataUniversalIdentifier: '450c32c7-806d-4729-ad92-7c25946bcea6',
+      position: 9,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: 'bcfed324-9ec9-4928-988e-6e4bb466a9be',
+      fieldMetadataUniversalIdentifier: '5c38074e-9956-4af1-ba52-88e4b386ef71',
+      position: 10,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '330d65d9-5b06-4350-8f97-35e42cc895ea',
+      fieldMetadataUniversalIdentifier: '8bbf1a0c-2184-40d7-b0ef-e75c13722b54',
+      position: 11,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: 'aff7cef8-28ac-4ea2-b237-7e88568a1146',
+      fieldMetadataUniversalIdentifier: '1c6d02f0-c628-4e61-ab46-8aef6af4c573',
+      position: 12,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: 'c69348ab-2f96-49f6-839b-2c4fb6c91f71',
+      fieldMetadataUniversalIdentifier: '333114f6-4d5e-40f5-8dcd-cf766f292ddc',
+      position: 13,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '55b17e33-3e02-41d6-aeff-e69c78321e17',
+      fieldMetadataUniversalIdentifier: 'db19e7c1-2442-4de1-b8d3-439676af58a9',
+      position: 14,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: 'c3c688ca-aa2d-4b9a-9d81-78b0873d4aa2',
+      fieldMetadataUniversalIdentifier: '21646e35-b914-40df-92c3-d7b6f57e76a8',
+      position: 15,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '4f6a3ab6-5336-4fe0-9009-62f8731794c9',
+      fieldMetadataUniversalIdentifier: 'f1cae674-993e-441d-a7a4-15f2039af51d',
+      position: 16,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '49c22d03-fd39-4eb1-bc69-875fb7857015',
+      fieldMetadataUniversalIdentifier: '0676385f-8e82-40cc-96fe-aa4147913617',
+      position: 17,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '6c161234-d87a-4f67-8157-0cbb9fac23d8',
+      fieldMetadataUniversalIdentifier: '03e2f267-f7d2-4e40-8e32-7b4f10d9e0f8',
+      position: 18,
+      isVisible: true,
+    },
+    {
+      universalIdentifier: '2de41526-991e-4b46-a474-ccddab54f6d7',
+      fieldMetadataUniversalIdentifier: '9660859e-ac5b-47ba-9925-7e6fc3243a4d',
+      position: 19,
+      isVisible: true,
+    },
+  ],
+});

@@ -1,0 +1,30 @@
+export type ApolloPersonData = {
+  id?: string | null;
+  first_name?: string | null;
+  last_name?: string | null;
+  name?: string | null;
+  title?: string | null;
+  headline?: string | null;
+  seniority?: string | null;
+  departments?: string[] | null;
+  email?: string | null;
+  email_status?: string | null;
+  personal_emails?: string[] | null;
+  photo_url?: string | null;
+  employment_history?: unknown[] | null;
+  linkedin_url?: string | null;
+  city?: string | null;
+  organization_id?: string | null;
+  organization_name?: string | null;
+  organization?: {
+    id?: string | null;
+    name?: string | null;
+    primary_domain?: string | null;
+    website_url?: string | null;
+    linkedin_url?: string | null;
+    industry?: string | null;
+    [key: string]: unknown;
+  } | null;
+  phone_numbers?: unknown[] | null;
+  [key: string]: unknown;
+};

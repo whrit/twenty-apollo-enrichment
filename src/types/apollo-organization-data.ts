@@ -1,0 +1,24 @@
+export type ApolloOrganizationData = {
+  id?: string | null;
+  name?: string | null;
+  primary_domain?: string | null;
+  linkedin_url?: string | null;
+  industry?: string | null;
+  estimated_num_employees?: number | null;
+  annual_revenue?: number | null;
+  founded_year?: number | null;
+  keywords?: string[] | null;
+  technology_names?: string[] | null;
+  total_funding?: number | null;
+  latest_funding_stage?: string | null;
+  primary_phone?: { number?: string | null } | null;
+  street_address?: string | null;
+  city?: string | null;
+  postal_code?: string | null;
+  state?: string | null;
+  country?: string | null;
+  organization_headcount_six_month_growth?: number | null;
+  organization_headcount_twelve_month_growth?: number | null;
+  naics_codes?: string[] | null;
+  [key: string]: unknown;
+};
