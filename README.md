@@ -1,7 +1,5 @@
 # Apollo for Twenty
 
-![Apollo for Twenty icon](public/apollo-icon.png)
-
 Open-source Apollo.io enrichment for [Twenty CRM](https://twenty.com).
 
 Enrich People and Companies from Twenty's command menu, workflows, or AI tools using **your own Apollo.io API credits**.
@@ -10,7 +8,7 @@ Enrich People and Companies from Twenty's command menu, workflows, or AI tools u
 
 ## Why this project exists
 
-The original `@excelium-tech/apollo` package provided a useful starting point but coupled enrichment access to a second assignable **Enrichment** workspace role. Twenty workspace members have one effective workspace role, so that design conflicts with ordinary `Admin` / `Member` usage.
+The only found Apollo enrichment package (won't name) was buns and did not function in any usable capacity so built one that works and people CAN ACTUALLY contribute to.
 
 This project removes that human-role gate. Twenty's native permission intersection already ensures an app invocation cannot exceed either:
 
@@ -52,13 +50,13 @@ After this package is published to npm and synced into Twenty's marketplace:
 
 ## App variables
 
-| Variable | Required | Default | Purpose |
-| --- | --- | --- | --- |
-| `APOLLO_API_KEY` | Yes | — | Apollo API key. Stored as a secret workspace-scoped application variable. |
-| `APOLLO_MAX_BULK_ENRICH` | No | `50` | Maximum records allowed in one bulk enrichment. |
-| `APOLLO_AUTO_ENRICH_COMPANIES` | No | `false` | Enrich new Companies automatically using fill-empty mode. |
-| `APOLLO_PHONE_WEBHOOK_URL` | No | — | Public callback URL for async phone reveal. |
-| `APOLLO_WEBHOOK_SECRET` | No | — | Optional shared secret for the public phone webhook. |
+| Variable                       | Required | Default | Purpose                                                                   |
+| ------------------------------ | -------- | ------- | ------------------------------------------------------------------------- |
+| `APOLLO_API_KEY`               | Yes      | —       | Apollo API key. Stored as a secret workspace-scoped application variable. |
+| `APOLLO_MAX_BULK_ENRICH`       | No       | `50`    | Maximum records allowed in one bulk enrichment.                           |
+| `APOLLO_AUTO_ENRICH_COMPANIES` | No       | `false` | Enrich new Companies automatically using fill-empty mode.                 |
+| `APOLLO_PHONE_WEBHOOK_URL`     | No       | —       | Public callback URL for async phone reveal.                               |
+| `APOLLO_WEBHOOK_SECRET`        | No       | —       | Optional shared secret for the public phone webhook.                      |
 
 ## Phone reveal
 

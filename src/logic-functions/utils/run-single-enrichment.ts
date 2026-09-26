@@ -37,8 +37,5 @@ export const runSingleEnrichment = async <TNode, TData, TParams>({
     adapter,
   });
 
-  return (
-    bulkResult.results[0] ??
-    buildErrorResult({ recordId, error: ENRICHMENT_FAILED_MESSAGE })
-  );
+  return bulkResult.results[0] ?? buildErrorResult({ recordId, error: ENRICHMENT_FAILED_MESSAGE });
 };

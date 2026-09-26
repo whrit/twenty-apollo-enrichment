@@ -1,20 +1,20 @@
 name: Bug report
 description: Report a reproducible problem with Apollo for Twenty
-title: "[Bug]: "
-labels: ["bug"]
+title: '[Bug]: '
+labels: ['bug']
 body:
   - type: input
     id: twenty-version
     attributes:
       label: Twenty version
-      placeholder: "2.42.6"
+      placeholder: '2.42.6'
     validations:
       required: true
   - type: input
     id: app-version
     attributes:
       label: App version
-      placeholder: "0.1.0"
+      placeholder: '0.1.0'
     validations:
       required: true
   - type: textarea

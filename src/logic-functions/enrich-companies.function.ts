@@ -3,7 +3,10 @@ import { defineLogicFunction, STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS } from 'twen
 import { UPDATE_FIELDS_OPTION_VALUES } from 'src/constants/update-fields-option-values';
 import { APOLLO_LOGIC_FUNCTION_CONSTANTS } from 'src/constants/universal-identifiers';
 import { enrichCompaniesCore } from 'src/logic-functions/handlers/enrich-companies';
-import { type EnrichInput, toBulkEnrichInput } from 'src/logic-functions/utils/to-bulk-enrich-input';
+import {
+  type EnrichInput,
+  toBulkEnrichInput,
+} from 'src/logic-functions/utils/to-bulk-enrich-input';
 
 const handler = (input: EnrichInput) => enrichCompaniesCore({ input: toBulkEnrichInput(input) });
 
@@ -16,7 +19,7 @@ export default defineLogicFunction({
   httpRouteTriggerSettings: {
     path: APOLLO_LOGIC_FUNCTION_CONSTANTS.enrichCompanies.path,
     httpMethod: 'POST',
-    isAuthRequired: true
+    isAuthRequired: true,
   },
   workflowActionTriggerSettings: {
     label: 'Enrich Companies',

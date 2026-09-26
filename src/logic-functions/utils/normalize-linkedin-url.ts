@@ -5,9 +5,7 @@ const SCHEME_REGEX = /^[a-z][a-z0-9+.-]*:\/\//;
 const LEADING_WWW_REGEX = /^www\./;
 const TRAILING_SLASHES_REGEX = /\/+$/;
 
-export const normalizeLinkedinUrl = (
-  rawLinkedinUrl: unknown,
-): string | undefined => {
+export const normalizeLinkedinUrl = (rawLinkedinUrl: unknown): string | undefined => {
   const linkedinUrlText = toText(rawLinkedinUrl);
   if (!isDefined(linkedinUrlText)) {
     return undefined;

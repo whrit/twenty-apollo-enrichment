@@ -2,32 +2,29 @@
   "name": "twenty-apollo-enrichment",
   "version": "0.1.0",
   "description": "Open-source Apollo.io enrichment for People and Companies in Twenty CRM that behaves/works AS EXPECTED and people can ACTUALLY contribute to...",
-  "license": "MIT",
   "keywords": [
-    "twenty-app",
-    "twenty",
-    "twenty-crm",
     "apollo",
     "apollo.io",
     "crm",
-    "enrichment"
+    "enrichment",
+    "twenty",
+    "twenty-app",
+    "twenty-crm"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/whrit/twenty-apollo-enrichment.git"
-  },
   "homepage": "https://github.com/whrit/twenty-apollo-enrichment#readme",
   "bugs": {
     "url": "https://github.com/whrit/twenty-apollo-enrichment/issues"
   },
-  "engines": {
-    "node": ">=24.18.0",
-    "twenty": ">=2.42.0"
+  "license": "MIT",
+  "author": "whrit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whrit/twenty-apollo-enrichment.git"
   },
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "pnpm@12.4.2",
   "scripts": {
     "twenty": "twenty",
     "dev": "twenty dev",
@@ -58,8 +55,11 @@
     "twenty-client-sdk": "2.42.0",
     "twenty-sdk": "2.42.0",
     "typescript": "6.0.3",
-    "vite-tsconfig-paths": "^6.1.1",
     "vitest": "^5.0.1"
   },
-  "author": "whrit"
+  "engines": {
+    "node": ">=24.18.0",
+    "twenty": ">=2.42.0"
+  },
+  "packageManager": "pnpm@12.4.2"
 }

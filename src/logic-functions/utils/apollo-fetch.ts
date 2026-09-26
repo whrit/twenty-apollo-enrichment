@@ -8,11 +8,9 @@ const MAX_RETRIES = 3;
 const BASE_BACKOFF_MS = 250;
 const MAX_RETRY_AFTER_MS = 30_000;
 
-const sleep = (ms: number): Promise<void> =>
-  new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
-const isRetryableStatus = (status: number): boolean =>
-  status === 429 || status >= 500;
+const isRetryableStatus = (status: number): boolean => status === 429 || status >= 500;
 
 // Prefer the server-provided Retry-After (seconds) when present, clamped to a
 // sane maximum; otherwise fall back to bounded exponential backoff.
@@ -45,6 +43,7 @@ export const apolloFetch = async ({
 }): Promise<ApolloFetchResult> => {
   const apiKey = getApolloApiKey();
 
+  /* oxlint-disable no-await-in-loop -- retry loop is sequential by design */
   for (let attempt = 0; ; attempt++) {
     let response: Response;
     try {
@@ -98,4 +97,5 @@ export const apolloFetch = async ({
 
     return { ok: true, httpStatus: response.status, json: responseObject };
   }
+  /* oxlint-enable no-await-in-loop */
 };

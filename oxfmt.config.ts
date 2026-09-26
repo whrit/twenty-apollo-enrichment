@@ -7,10 +7,5 @@ export default defineConfig({
   semi: true,
   singleQuote: true,
   trailingComma: 'all',
-  ignorePatterns: [
-    '**/node_modules/**',
-    '**/dist/**',
-    '**/.twenty/**',
-    '**/coverage/**',
-  ],
+  ignorePatterns: ['**/node_modules/**', '**/dist/**', '**/.twenty/**', '**/coverage/**'],
 });

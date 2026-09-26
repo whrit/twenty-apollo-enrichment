@@ -28,7 +28,5 @@ export const isApolloOrganizationMatched = (organization: unknown): boolean => {
 
   const record = organization as Record<string, unknown>;
 
-  return (
-    isDefined(toText(record.name)) || isDefined(toText(record.primary_domain))
-  );
+  return isDefined(toText(record.name)) || isDefined(toText(record.primary_domain));
 };

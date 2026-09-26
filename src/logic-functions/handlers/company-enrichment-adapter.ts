@@ -22,13 +22,7 @@ export const companyEnrichmentAdapter: BatchEnrichmentAdapter<
   getLastEnrichedAt: (node) => node.apolloLastEnrichedAt ?? null,
   extractParams: extractCompanyMatchParams,
   enrichBatch: enrichCompanies,
-  buildMatchedData: ({
-    node,
-    outcome,
-    enrichedAt,
-    overrideExistingValues,
-    shouldPersist,
-  }) =>
+  buildMatchedData: ({ node, outcome, enrichedAt, overrideExistingValues, shouldPersist }) =>
     buildCompanyMatchedData({
       node,
       outcome,

@@ -16,10 +16,6 @@ export const enrichCompanies = (
     body: { details: params.map(buildApolloOrganizationDetail) },
     count: params.length,
     extractList: (json) =>
-      isArray(json.organizations)
-        ? json.organizations
-        : isArray(json.matches)
-          ? json.matches
-          : [],
+      isArray(json.organizations) ? json.organizations : isArray(json.matches) ? json.matches : [],
     isMatched: isApolloOrganizationMatched,
   });

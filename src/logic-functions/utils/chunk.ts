@@ -1,10 +1,4 @@
-export const chunk = <TItem>({
-  items,
-  size,
-}: {
-  items: TItem[];
-  size: number;
-}): TItem[][] => {
+export const chunk = <TItem>({ items, size }: { items: TItem[]; size: number }): TItem[][] => {
   if (size <= 0) {
     return items.length > 0 ? [items] : [];
   }

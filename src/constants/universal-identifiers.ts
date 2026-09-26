@@ -1,11 +1,8 @@
-export const APPLICATION_UNIVERSAL_IDENTIFIER =
-  '9dbd3ab1-f785-4004-8499-22bf7c7c19fa';
+export const APPLICATION_UNIVERSAL_IDENTIFIER = '9dbd3ab1-f785-4004-8499-22bf7c7c19fa';
 
-export const DEFAULT_ROLE_UNIVERSAL_IDENTIFIER =
-  '5ac69291-12f8-471b-a544-f54e1bb427cb';
+export const DEFAULT_ROLE_UNIVERSAL_IDENTIFIER = '5ac69291-12f8-471b-a544-f54e1bb427cb';
 
-export const APOLLO_API_KEY_VARIABLE_UNIVERSAL_IDENTIFIER =
-  '432580ce-39bc-4c90-a6d7-d10b48b9973a';
+export const APOLLO_API_KEY_VARIABLE_UNIVERSAL_IDENTIFIER = '432580ce-39bc-4c90-a6d7-d10b48b9973a';
 
 export const APOLLO_PHONE_WEBHOOK_URL_VARIABLE_UNIVERSAL_IDENTIFIER =
   '5ab0c9a8-cef2-4eef-bcc2-13b56a3fbf53';
@@ -20,12 +17,27 @@ export const APOLLO_AUTO_ENRICH_COMPANIES_VARIABLE_UNIVERSAL_IDENTIFIER =
   '8fcc6792-8e0d-4c09-952b-40fa8659dd30';
 
 export const APOLLO_LOGIC_FUNCTION_CONSTANTS = {
-  enrichPeople: { universalIdentifier: 'bdd6a4ca-922d-48f6-95b7-97acacfc12b4', path: '/apollo/enrich-people' },
-  enrichPerson: { universalIdentifier: '103850f5-ca15-4624-b3e5-155ee60c798c', path: '/apollo/enrich-person' },
-  enrichCompanies: { universalIdentifier: '1e59b468-bc4f-4765-9440-bfb4c6b6e10c', path: '/apollo/enrich-companies' },
-  enrichCompany: { universalIdentifier: '3fc610a7-3e44-4d79-9838-73c87ef51d6d', path: '/apollo/enrich-company' },
+  enrichPeople: {
+    universalIdentifier: 'bdd6a4ca-922d-48f6-95b7-97acacfc12b4',
+    path: '/apollo/enrich-people',
+  },
+  enrichPerson: {
+    universalIdentifier: '103850f5-ca15-4624-b3e5-155ee60c798c',
+    path: '/apollo/enrich-person',
+  },
+  enrichCompanies: {
+    universalIdentifier: '1e59b468-bc4f-4765-9440-bfb4c6b6e10c',
+    path: '/apollo/enrich-companies',
+  },
+  enrichCompany: {
+    universalIdentifier: '3fc610a7-3e44-4d79-9838-73c87ef51d6d',
+    path: '/apollo/enrich-company',
+  },
   autoEnrichCompany: { universalIdentifier: '215f37e2-ce2d-425a-9b08-0e08ad00706b' },
-  phoneWebhook: { universalIdentifier: '6542e22c-8dff-43d0-ab37-f156be386aee', path: '/webhook/apollo-phone' },
+  phoneWebhook: {
+    universalIdentifier: '6542e22c-8dff-43d0-ab37-f156be386aee',
+    path: '/webhook/apollo-phone',
+  },
 } as const;
 
 export const APOLLO_FIELD_UNIVERSAL_IDENTIFIERS = {
@@ -81,43 +93,3 @@ export const APOLLO_COMMAND_MENU_ITEM_UNIVERSAL_IDENTIFIERS = {
   enrichCompanies: '474b1f8b-1f74-4eb6-810f-2f8dd328a1e7',
   enrichPeople: '7ef377e7-70ab-4766-9829-ea5fd6d38dd5',
 };
-
-export const APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS = {
-  personEnrichmentStatus: {
-    matched: '4dafc199-67f2-4c51-a28c-85ae6d74847e',
-    notFound: '083311a9-6ea9-4e4d-9311-fa9a2ca01c8d',
-    error: 'fbfabcd1-6b0a-44b5-a517-7597f9baf3f4',
-  },
-  companyEnrichmentStatus: {
-    matched: 'd83ead57-b618-4d46-bdd8-20892c33f54f',
-    notFound: 'be64f77c-5123-49b1-b05a-08f6430cbdd8',
-    error: '0be86255-6c01-4cde-959e-2b28e53872f4',
-  },
-  seniority: {
-    owner: 'd823abcc-3e45-40f7-a4b3-8daea01d15ef',
-    founder: 'b3a4f0c8-a46a-4903-95d4-ecd3c0a61f62',
-    cSuite: 'a291d895-2012-4f78-bc23-7913632a16cc',
-    partner: '5b844af9-8b26-4388-acd6-e3eeca5aae0d',
-    vp: '85973976-9327-4c08-affd-ca160d1a51ab',
-    head: '17bc3ace-2e0f-4441-9fa8-7590cfdf446e',
-    director: '36d7eaa3-8ceb-4137-a0bb-e1dc33c4b547',
-    manager: 'cb7a041e-b660-4417-be9b-63744758b431',
-    senior: 'f6110163-f781-42db-9fe7-f45d848f2461',
-    entry: '6dec29d4-25b2-4b98-8036-eba805988178',
-    intern: '1f54d868-3d1c-4bb2-984d-1784b975ce10',
-    unpaid: '57a0257e-bfd2-4447-baa7-2ff2d2039dce',
-  },
-  emailStatus: {
-    verified: 'a2981b67-3344-4878-bcdc-3ae351f76d3c',
-    guessed: 'f5e64e91-5e1d-4239-9481-7b9823a90002',
-    unavailable: 'bed4c74a-5b6d-419d-9ebe-b2f370361a27',
-    bounced: 'c84d7217-b792-4622-917e-1388917e0fe6',
-    pendingManualFulfillment: 'c7a1f9d3-0003-45a0-a698-f9f7d675ab10',
-  },
-  phoneStatus: {
-    none: 'a158034c-c503-4db6-90c8-542d78c0b795',
-    pending: 'c9b0c64b-0e84-4a10-9e99-be9351a3c8f4',
-    revealed: '4c3e8d9b-75ba-48d9-82d4-fb1ab444e503',
-    failed: 'aec06c3e-ee87-4e67-ae7b-2ef40815463f',
-  },
-} as const;

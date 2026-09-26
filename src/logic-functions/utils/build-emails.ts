@@ -7,9 +7,7 @@ import { isDefined } from 'src/utils/is-defined';
 // Simple sanity check to drop obviously malformed addresses before persisting.
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export const buildEmails = (
-  candidates: (string | null | undefined)[],
-): EmailsValue | undefined => {
+export const buildEmails = (candidates: (string | null | undefined)[]): EmailsValue | undefined => {
   const emails: string[] = [];
   const seenEmailKeys = new Set<string>();
 

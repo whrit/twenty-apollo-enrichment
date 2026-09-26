@@ -10,9 +10,7 @@ const toPhoneList = (value: unknown): unknown[] => (isArray(value) ? value : [])
 
 // Pulls phone-number strings out of an Apollo phone-reveal webhook payload,
 // tolerating both bare strings and Apollo's phone objects.
-export const extractApolloPhoneNumbers = (
-  payload: ApolloPhoneWebhookPayload,
-): string[] => {
+export const extractApolloPhoneNumbers = (payload: ApolloPhoneWebhookPayload): string[] => {
   const rawEntries = [
     ...toPhoneList(payload.phone_numbers),
     ...toPhoneList(payload.person?.phone_numbers),
@@ -34,9 +32,7 @@ export const extractApolloPhoneNumbers = (
     if (isObject(entry)) {
       const record = entry as Record<string, unknown>;
       const value =
-        toText(record.sanitized_number) ??
-        toText(record.raw_number) ??
-        toText(record.number);
+        toText(record.sanitized_number) ?? toText(record.raw_number) ?? toText(record.number);
       if (isDefined(value)) {
         numbers.push(value);
       }

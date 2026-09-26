@@ -1,15 +1,10 @@
-import {
-  defineView,
-  STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS,
-  ViewType,
-} from 'twenty-sdk/define';
+import { defineView, STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS, ViewType } from 'twenty-sdk/define';
 
 export default defineView({
   universalIdentifier: 'cf781cef-661d-4445-84f0-8d0f3224dd14',
   name: 'Enriched (Apollo)',
   icon: 'IconSparkles',
-  objectUniversalIdentifier:
-    STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.company.universalIdentifier,
+  objectUniversalIdentifier: STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS.company.universalIdentifier,
   type: ViewType.TABLE,
   fields: [
     {

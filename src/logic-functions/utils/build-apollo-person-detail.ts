@@ -2,9 +2,7 @@ import { type ApolloPersonEnrichParams } from 'src/types/apollo-person-enrich-pa
 import { pruneUndefined } from 'src/utils/prune-undefined';
 
 // Maps our internal match params to an Apollo /people/match detail object.
-export const buildApolloPersonDetail = (
-  entry: ApolloPersonEnrichParams,
-): Record<string, unknown> =>
+export const buildApolloPersonDetail = (entry: ApolloPersonEnrichParams): Record<string, unknown> =>
   pruneUndefined({
     id: entry.apolloId,
     name: entry.name,

@@ -7,10 +7,7 @@ import { type CompanyIdByMatchKeyCache } from 'src/types/company-id-by-match-key
 export type BatchEnrichmentAdapter<TNode, TData, TParams> = {
   objectNameSingular: string;
   noIdentifierMessage: string;
-  readRecords: (args: {
-    client: CoreApiClient;
-    recordIds: string[];
-  }) => Promise<TNode[]>;
+  readRecords: (args: { client: CoreApiClient; recordIds: string[] }) => Promise<TNode[]>;
   getNodeId: (node: TNode) => string;
   getLastEnrichedAt: (node: TNode) => string | null | undefined;
   extractParams: (args: { node: TNode; input: BulkEnrichInput }) => TParams | undefined;

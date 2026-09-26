@@ -4,9 +4,7 @@ import { isDefined } from 'src/utils/is-defined';
 const SCHEME_REGEX = /^[a-z][a-z0-9+.-]*:\/\//;
 const LEADING_WWW_REGEX = /^www\./;
 
-export const normalizeDomain = (
-  rawDomainValue: unknown,
-): string | undefined => {
+export const normalizeDomain = (rawDomainValue: unknown): string | undefined => {
   const domainText = toText(rawDomainValue);
   if (!isDefined(domainText)) {
     return undefined;

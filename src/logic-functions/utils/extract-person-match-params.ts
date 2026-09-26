@@ -32,9 +32,7 @@ export const extractPersonMatchParams = ({
 
   // Apollo cannot match a bare organization name without a person identifier.
   const hasPersonIdentifier =
-    isDefined(params.email) ||
-    isDefined(params.linkedinUrl) ||
-    isDefined(params.name);
+    isDefined(params.email) || isDefined(params.linkedinUrl) || isDefined(params.name);
 
   if (!hasPersonIdentifier) {
     return undefined;

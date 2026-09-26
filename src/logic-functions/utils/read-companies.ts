@@ -47,7 +47,6 @@ export const readCompanies = async ({
     .map((edge) => edge?.node)
     .filter(
       (companyNode): companyNode is CompanyNode =>
-        isObject(companyNode) &&
-        isNonEmptyString((companyNode as { id?: unknown }).id),
+        isObject(companyNode) && isNonEmptyString((companyNode as { id?: unknown }).id),
     );
 };

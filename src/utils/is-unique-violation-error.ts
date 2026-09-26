@@ -68,7 +68,5 @@ const collectErrorText = (error: unknown, depth = 0): string => {
 export const isUniqueViolationError = (error: unknown): boolean => {
   const lowerCaseErrorText = collectErrorText(error).toLowerCase();
 
-  return DUPLICATE_VIOLATION_PHRASES.some((phrase) =>
-    lowerCaseErrorText.includes(phrase),
-  );
+  return DUPLICATE_VIOLATION_PHRASES.some((phrase) => lowerCaseErrorText.includes(phrase));
 };

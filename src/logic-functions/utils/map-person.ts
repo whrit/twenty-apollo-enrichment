@@ -19,9 +19,7 @@ const SENIORITY_VALUES = buildAllowedValues(SENIORITY_OPTIONS);
 const EMAIL_STATUS_VALUES = buildAllowedValues(EMAIL_STATUS_OPTIONS);
 
 export const mapPerson = (personData: ApolloPersonData): MappedRecord => {
-  const personalEmails = isArray(personData.personal_emails)
-    ? personData.personal_emails
-    : [];
+  const personalEmails = isArray(personData.personal_emails) ? personData.personal_emails : [];
 
   const standard = pruneUndefined({
     name: buildFullName({

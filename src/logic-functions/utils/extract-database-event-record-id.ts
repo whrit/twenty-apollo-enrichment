@@ -2,9 +2,7 @@ import { isObject } from '@sniptt/guards';
 
 // A database-event invocation (e.g. company.created) carries a `name` like
 // "company.created" and a top-level `recordId`. Returns the created record's id.
-export const extractDatabaseEventRecordId = (
-  input: unknown,
-): string | undefined => {
+export const extractDatabaseEventRecordId = (input: unknown): string | undefined => {
   if (!isObject(input)) {
     return undefined;
   }

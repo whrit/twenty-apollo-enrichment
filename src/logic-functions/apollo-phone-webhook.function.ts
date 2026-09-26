@@ -19,8 +19,7 @@ const apolloPhoneWebhookRouteHandler = async (
   }
 
   const providedSecret =
-    routePayload.queryStringParameters?.secret ??
-    routePayload.headers?.['x-apollo-webhook-secret'];
+    routePayload.queryStringParameters?.secret ?? routePayload.headers?.['x-apollo-webhook-secret'];
 
   return apolloPhoneWebhookHandler({
     payload: body,
@@ -30,8 +29,7 @@ const apolloPhoneWebhookRouteHandler = async (
 };
 
 export default defineLogicFunction({
-  universalIdentifier:
-    APOLLO_LOGIC_FUNCTION_CONSTANTS.phoneWebhook.universalIdentifier,
+  universalIdentifier: APOLLO_LOGIC_FUNCTION_CONSTANTS.phoneWebhook.universalIdentifier,
   name: 'apollo-phone-webhook',
   description:
     'Receives Apollo async phone-reveal callbacks and writes the revealed phone number onto the correlated Person, matched by apolloRequestId.',

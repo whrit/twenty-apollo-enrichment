@@ -31,8 +31,7 @@ const findOrCreateUncachedCompany = async ({
   }
 
   const canCreateNewCompany =
-    isNonEmptyString(companyMatchKeys.name) ||
-    isNonEmptyString(companyMatchKeys.website);
+    isNonEmptyString(companyMatchKeys.name) || isNonEmptyString(companyMatchKeys.website);
 
   if (!canCreateNewCompany) {
     return undefined;

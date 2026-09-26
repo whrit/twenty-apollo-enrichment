@@ -9,9 +9,7 @@ import { type ApolloOrganizationData } from 'src/types/apollo-organization-data'
 import { type MappedRecord } from 'src/types/mapped-record';
 import { pruneUndefined } from 'src/utils/prune-undefined';
 
-export const mapCompany = (
-  companyData: ApolloOrganizationData,
-): MappedRecord => {
+export const mapCompany = (companyData: ApolloOrganizationData): MappedRecord => {
   const address = buildAddress({
     street1: companyData.street_address,
     city: companyData.city,
@@ -44,12 +42,8 @@ export const mapCompany = (
     apolloLinkedinUrl: toText(companyData.linkedin_url),
     apolloPhone: toText(companyData.primary_phone?.number),
     apolloLocation: address,
-    apolloHeadcountGrowth6mo: toNumber(
-      companyData.organization_headcount_six_month_growth,
-    ),
-    apolloHeadcountGrowth12mo: toNumber(
-      companyData.organization_headcount_twelve_month_growth,
-    ),
+    apolloHeadcountGrowth6mo: toNumber(companyData.organization_headcount_six_month_growth),
+    apolloHeadcountGrowth12mo: toNumber(companyData.organization_headcount_twelve_month_growth),
     apolloNaicsCodes: toStringArray(companyData.naics_codes),
   });
 

@@ -1,10 +1,12 @@
 import fs from 'node:fs';
 
-const packageJson = JSON.parse(fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+const packageJson = JSON.parse(
+  fs.readFileSync(new URL('../package.json', import.meta.url), 'utf8'),
+);
 const appConfig = fs.readFileSync(new URL('../src/application-config.ts', import.meta.url), 'utf8');
 
 const text = JSON.stringify(packageJson) + appConfig;
-const placeholders = ['YOUR_GITHUB_USERNAME'];
+const placeholders = ['whrit'];
 
 for (const placeholder of placeholders) {
   if (text.includes(placeholder)) {

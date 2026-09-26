@@ -1,13 +1,7 @@
 import { RestApiClient } from 'twenty-client-sdk/rest';
 import { enqueueSnackbar } from 'twenty-sdk/front-component';
 
-export const execute = async ({
-  path,
-  recordIds,
-}: {
-  path: string;
-  recordIds: string[];
-}) => {
+export const execute = async ({ path, recordIds }: { path: string; recordIds: string[] }) => {
   // The per-action cap is configurable server-side (APOLLO_MAX_BULK_ENRICH) and
   // not visible to the browser, so the server enforces it and returns a message
   // that this handler surfaces below.

@@ -156,9 +156,7 @@ const recordNotFoundRecords = async <TNode, TData, TParams>({
 
     return [];
   } catch (notFoundStatusWriteError) {
-    const notFoundStatusWriteErrorMessage = toErrorMessage(
-      notFoundStatusWriteError,
-    );
+    const notFoundStatusWriteErrorMessage = toErrorMessage(notFoundStatusWriteError);
     for (const recordId of notFoundRecordIds) {
       resultById.set(
         recordId,
@@ -185,9 +183,7 @@ export const enrichChunk = async <TNode, TData, TParams>({
   resultById: Map<string, EnrichResult>;
   companyIdByMatchKeyCache: CompanyIdByMatchKeyCache;
 }): Promise<void> => {
-  const { shouldPersist, overrideExistingValues } = resolveUpdateFieldsMode(
-    input.updateFields,
-  );
+  const { shouldPersist, overrideExistingValues } = resolveUpdateFieldsMode(input.updateFields);
 
   // In fill-empty mode, don't re-enrich records that were already enriched —
   // it would spend Apollo credits for no field change. "Overwrite" and preview
@@ -200,10 +196,7 @@ export const enrichChunk = async <TNode, TData, TParams>({
   } catch (readError) {
     const readErrorMessage = toErrorMessage(readError);
     for (const recordId of recordIds) {
-      resultById.set(
-        recordId,
-        buildErrorResult({ recordId, error: readErrorMessage }),
-      );
+      resultById.set(recordId, buildErrorResult({ recordId, error: readErrorMessage }));
     }
 
     return;
@@ -213,8 +206,7 @@ export const enrichChunk = async <TNode, TData, TParams>({
     recordNodes.map((recordNode) => [adapter.getNodeId(recordNode), recordNode]),
   );
 
-  const recordsToEnrich: { recordId: string; node: TNode; params: TParams }[] =
-    [];
+  const recordsToEnrich: { recordId: string; node: TNode; params: TParams }[] = [];
   for (const recordId of recordIds) {
     const recordNode = nodeByRecordId.get(recordId);
     if (!isDefined(recordNode)) {
@@ -282,9 +274,7 @@ export const enrichChunk = async <TNode, TData, TParams>({
       await writeErrorStatusWithBackoff({
         adapter,
         client,
-        recordIds: recordsToEnrich.map(
-          (recordToEnrich) => recordToEnrich.recordId,
-        ),
+        recordIds: recordsToEnrich.map((recordToEnrich) => recordToEnrich.recordId),
         enrichedAt,
       });
     }
@@ -303,10 +293,7 @@ export const enrichChunk = async <TNode, TData, TParams>({
       const enrichmentErrorMessage = isDefined(enrichmentOutcome)
         ? enrichmentOutcome.message
         : 'Apollo.io returned no response for this record.';
-      resultById.set(
-        recordId,
-        buildErrorResult({ recordId, error: enrichmentErrorMessage }),
-      );
+      resultById.set(recordId, buildErrorResult({ recordId, error: enrichmentErrorMessage }));
       recordIdsToMarkAsError.push(recordId);
       continue;
     }
@@ -317,6 +304,7 @@ export const enrichChunk = async <TNode, TData, TParams>({
     }
 
     try {
+      // oxlint-disable-next-line no-await-in-loop -- sequential: companyIdByMatchKeyCache must see prior writes to avoid duplicate companies
       const { mappedData, persistData } = await adapter.buildMatchedData({
         client,
         node: recordNode,

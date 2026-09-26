@@ -50,6 +50,7 @@ export const runBatchEnrichment = async <TNode, TData, TParams>({
   const companyIdByMatchKeyCache: CompanyIdByMatchKeyCache = new Map();
 
   for (const recordIdsChunk of chunk({ items: recordIds, size: APOLLO_BATCH_SIZE })) {
+    // oxlint-disable-next-line no-await-in-loop -- sequential: shared company cache + Apollo rate limits
     await enrichChunk({
       client,
       recordIds: recordIdsChunk,
@@ -62,8 +63,7 @@ export const runBatchEnrichment = async <TNode, TData, TParams>({
 
   const results = recordIds.map(
     (recordId) =>
-      resultById.get(recordId) ??
-      buildErrorResult({ recordId, error: ENRICHMENT_FAILED_MESSAGE }),
+      resultById.get(recordId) ?? buildErrorResult({ recordId, error: ENRICHMENT_FAILED_MESSAGE }),
   );
 
   return aggregateBulkEnrichResult(results);

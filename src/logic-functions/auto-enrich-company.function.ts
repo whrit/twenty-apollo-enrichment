@@ -11,15 +11,11 @@ import { type EnrichResult } from 'src/types/enrich-result';
 // Fires on every Company creation. Enriches the new record (fill-empty) only
 // when the APOLLO_AUTO_ENRICH_COMPANIES application variable is enabled, so the
 // feature — and its Apollo credit usage — is opt-in.
-export const autoEnrichCompanyHandler = (
-  input: unknown,
-): Promise<EnrichResult> => {
+export const autoEnrichCompanyHandler = (input: unknown): Promise<EnrichResult> => {
   const recordId = extractDatabaseEventRecordId(input);
 
   if (recordId === undefined) {
-    return Promise.resolve(
-      buildSkippedResult({ recordId: '', message: 'Missing recordId.' }),
-    );
+    return Promise.resolve(buildSkippedResult({ recordId: '', message: 'Missing recordId.' }));
   }
 
   if (!getAutoEnrichCompanies()) {
@@ -37,8 +33,7 @@ export const autoEnrichCompanyHandler = (
 };
 
 export default defineLogicFunction({
-  universalIdentifier:
-    APOLLO_LOGIC_FUNCTION_CONSTANTS.autoEnrichCompany.universalIdentifier,
+  universalIdentifier: APOLLO_LOGIC_FUNCTION_CONSTANTS.autoEnrichCompany.universalIdentifier,
   name: 'auto-enrich-company',
   description:
     'Automatically enriches a newly created Company with Apollo (fill-empty) when APOLLO_AUTO_ENRICH_COMPANIES is enabled.',

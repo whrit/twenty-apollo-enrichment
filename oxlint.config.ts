@@ -12,13 +12,10 @@ export default defineConfig({
     es6: true,
     node: true,
   },
-  ignorePatterns: [
-    '**/node_modules/**',
-    '**/dist/**',
-    '**/.twenty/**',
-    '**/coverage/**',
-  ],
+  ignorePatterns: ['**/node_modules/**', '**/dist/**', '**/.twenty/**', '**/coverage/**'],
   rules: {
     'no-console': 'off',
+    // tsconfig uses `jsx: react-jsx` (automatic runtime); React import not needed.
+    'react/react-in-jsx-scope': 'off',
   },
 });
