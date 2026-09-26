@@ -58,32 +58,51 @@ twenty-apollo-enrichment
 Confirm it is available before the first publish. If you change the npm package
 name, update `package.json` before releasing.
 
-Configure npm Trusted Publishing for:
+npm Trusted Publishing (OIDC) can only be configured on a package that already
+exists, and npm has no "pending publisher". Until it is configured, the GitHub
+workflow fails with `404 Not Found - PUT https://registry.npmjs.org/twenty-apollo-enrichment`.
 
-- GitHub owner: your username
-- Repository: `twenty-apollo-enrichment`
-- Workflow: `publish.yml`
+## 5. First publish (manual, once)
 
-If npm requires a bootstrap publication before Trusted Publishing can be
-configured, make that one publication with a short-lived granular publish token,
-revoke the token, then use OIDC thereafter.
-
-## 5. Publish
+Requires an npm account with 2FA enabled.
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-`.github/workflows/publish.yml` runs the validation suite and:
-
-```bash
+npm login
+pnpm check:release && pnpm check
 pnpm exec twenty app:publish
 ```
 
-The public GitHub workflow supplies OIDC for npm provenance.
+`twenty app:publish` builds `.twenty/output` and runs
+`npm publish --access public` there; npm prompts for 2FA. Provenance is only
+added inside GitHub Actions.
 
-## 6. Twenty marketplace
+Alternative without an interactive 2FA publish: run `npm stage publish` from
+`.twenty/output` (npm 11+), then approve it with 2FA via `npm stage approve <id>`
+or the Staged Packages tab on npmjs.com.
+
+## 6. Configure Trusted Publishing
+
+On npmjs.com → package `twenty-apollo-enrichment` → Settings → Trusted
+Publisher → GitHub Actions:
+
+- Organization or user: `whrit`
+- Repository: `twenty-apollo-enrichment`
+- Workflow filename: `publish.yml`
+- Environment: leave empty
+
+## 7. Publish from CI
+
+Bump to a version not yet on npm, then push the tag:
+
+```bash
+pnpm version patch
+git push origin main --follow-tags
+```
+
+`.github/workflows/publish.yml` runs the validation suite and
+`pnpm exec twenty app:publish` with OIDC and provenance; no npm token needed.
+
+## 8. Twenty marketplace
 
 The package includes the required `twenty-app` npm keyword.
 
@@ -96,7 +115,7 @@ pnpm exec twenty dev:catalog-sync --remote production
 
 Community apps may require disabling the `Vetted only` marketplace filter.
 
-## 7. Claim ownership
+## 9. Claim ownership
 
 Because the app exposes a public server route for phone callbacks, claim the app
 registration from the intended owner workspace using GitHub provenance:
@@ -105,7 +124,7 @@ registration from the intended owner workspace using GitHub provenance:
 
 Then configure the app variables and install it in the owner workspace.
 
-## 8. Future releases
+## 10. Future releases
 
 Bump semver before every release:
 
