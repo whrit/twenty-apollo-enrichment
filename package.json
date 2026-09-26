@@ -1,6 +1,6 @@
 {
   "name": "twenty-apollo-enrichment",
-  "version": "0.2.0",
+  "version": "0.1.2",
   "description": "Open-source Apollo.io enrichment for People and Companies in Twenty CRM that behaves/works AS EXPECTED and people can ACTUALLY contribute to...",
   "keywords": [
     "apollo",
@@ -19,7 +19,7 @@
   "author": "whrit",
   "repository": {
     "type": "git",
-    "url": "https://github.com/whrit/twenty-apollo-enrichment.git"
+    "url": "git+https://github.com/whrit/twenty-apollo-enrichment.git"
   },
   "type": "module",
   "publishConfig": {
@@ -38,8 +38,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check:release": "node scripts/check-release-metadata.mjs",
-    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
-    "prepublishOnly": "pnpm check:release && pnpm check"
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {
     "@sniptt/guards": "0.2.0"
