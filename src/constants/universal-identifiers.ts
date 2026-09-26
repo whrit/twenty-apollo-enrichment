@@ -87,9 +87,66 @@ export const APOLLO_VIEW_UNIVERSAL_IDENTIFIERS = {
 export const APOLLO_FRONT_COMPONENT_UNIVERSAL_IDENTIFIERS = {
   enrichCompanies: 'dc31f739-fc3e-447d-b582-c957b56e7e90',
   enrichPeople: 'b50b9615-ef3b-41f2-ac33-dcdb434cb730',
+  companyRecordPanel: 'f348cb69-a719-4685-8fef-11985fd7285c',
+  personRecordPanel: 'a479f62b-fd40-49cc-9ab2-3366730135d4',
 };
+
+export const APOLLO_RECORD_PAGE_UNIVERSAL_IDENTIFIERS = {
+  companyFieldsView: 'aa10f9ab-b964-454c-9023-206c9f90dd6d',
+  personFieldsView: 'ba403326-239b-4f6c-9572-097527dedd46',
+  companyTab: '8be13729-9e0d-4059-9ad4-b0b18f2e7b59',
+  personTab: '67797006-9adc-4c0c-bc86-b6b40d30923a',
+  companyTabPanelWidget: 'e7cb8c0c-c8e0-4567-9a3c-8d4c7da89308',
+  personTabPanelWidget: '57fad0c4-767d-42f3-84c0-844f255974f1',
+  companyTabFieldsWidget: 'e0634363-7ebf-485a-a992-2b0d54052781',
+  personTabFieldsWidget: '12194e29-c3d1-4fc4-83f6-dce8a5ac820e',
+  companyHomePanelWidget: '5e3c653c-854d-4bf9-a7df-579f219710e7',
+  personHomePanelWidget: '8cdd25eb-4db1-4ac2-aba3-3b3ec2b01fc5',
+} as const;
 
 export const APOLLO_COMMAND_MENU_ITEM_UNIVERSAL_IDENTIFIERS = {
   enrichCompanies: '474b1f8b-1f74-4eb6-810f-2f8dd328a1e7',
   enrichPeople: '7ef377e7-70ab-4766-9829-ea5fd6d38dd5',
 };
+
+// Twenty field option entries use `id` rather than `universalIdentifier`.
+// These stable UUIDs preserve option identity across app upgrades.
+export const APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS = {
+  personEnrichmentStatus: {
+    matched: '4dafc199-67f2-4c51-a28c-85ae6d74847e',
+    notFound: '083311a9-6ea9-4e4d-9311-fa9a2ca01c8d',
+    error: 'fbfabcd1-6b0a-44b5-a517-7597f9baf3f4',
+  },
+  companyEnrichmentStatus: {
+    matched: 'd83ead57-b618-4d46-bdd8-20892c33f54f',
+    notFound: 'be64f77c-5123-49b1-b05a-08f6430cbdd8',
+    error: '0be86255-6c01-4cde-959e-2b28e53872f4',
+  },
+  seniority: {
+    owner: 'd823abcc-3e45-40f7-a4b3-8daea01d15ef',
+    founder: 'b3a4f0c8-a46a-4903-95d4-ecd3c0a61f62',
+    cSuite: 'a291d895-2012-4f78-bc23-7913632a16cc',
+    partner: '5b844af9-8b26-4388-acd6-e3eeca5aae0d',
+    vp: '85973976-9327-4c08-affd-ca160d1a51ab',
+    head: '17bc3ace-2e0f-4441-9fa8-7590cfdf446e',
+    director: '36d7eaa3-8ceb-4137-a0bb-e1dc33c4b547',
+    manager: 'cb7a041e-b660-4417-be9b-63744758b431',
+    senior: 'f6110163-f781-42db-9fe7-f45d848f2461',
+    entry: '6dec29d4-25b2-4b98-8036-eba805988178',
+    intern: '1f54d868-3d1c-4bb2-984d-1784b975ce10',
+    unpaid: '57a0257e-bfd2-4447-baa7-2ff2d2039dce',
+  },
+  emailStatus: {
+    verified: 'a2981b67-3344-4878-bcdc-3ae351f76d3c',
+    guessed: 'f5e64e91-5e1d-4239-9481-7b9823a90002',
+    unavailable: 'bed4c74a-5b6d-419d-9ebe-b2f370361a27',
+    bounced: 'c84d7217-b792-4622-917e-1388917e0fe6',
+    pendingManualFulfillment: 'c7a1f9d3-0003-45a0-a698-f9f7d675ab10',
+  },
+  phoneStatus: {
+    none: 'a158034c-c503-4db6-90c8-542d78c0b795',
+    pending: 'c9b0c64b-0e84-4a10-9e99-be9351a3c8f4',
+    revealed: '4c3e8d9b-75ba-48d9-82d4-fb1ab444e503',
+    failed: 'aec06c3e-ee87-4e67-ae7b-2ef40815463f',
+  },
+} as const;

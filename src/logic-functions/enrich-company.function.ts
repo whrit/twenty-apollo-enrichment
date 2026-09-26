@@ -3,9 +3,13 @@ import { defineLogicFunction, STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS } from 'twen
 import { UPDATE_FIELDS_OPTION_VALUES } from 'src/constants/update-fields-option-values';
 import { APOLLO_LOGIC_FUNCTION_CONSTANTS } from 'src/constants/universal-identifiers';
 import { enrichCompanyCore } from 'src/logic-functions/handlers/enrich-company';
-import { type SingleEnrichInput } from 'src/types/single-enrich-input';
+import {
+  type SingleEnrichTriggerInput,
+  toSingleEnrichInput,
+} from 'src/logic-functions/utils/to-single-enrich-input';
 
-const handler = (input: SingleEnrichInput) => enrichCompanyCore({ input });
+const handler = (input: SingleEnrichTriggerInput) =>
+  enrichCompanyCore({ input: toSingleEnrichInput(input) });
 
 export default defineLogicFunction({
   universalIdentifier: APOLLO_LOGIC_FUNCTION_CONSTANTS.enrichCompany.universalIdentifier,
@@ -14,6 +18,11 @@ export default defineLogicFunction({
     'Enrich a single Company record with Apollo.io data (industry, size, funding, location, etc.) given its record id.',
   timeoutSeconds: 60,
   handler,
+  httpRouteTriggerSettings: {
+    path: APOLLO_LOGIC_FUNCTION_CONSTANTS.enrichCompany.path,
+    httpMethod: 'POST',
+    isAuthRequired: true,
+  },
   workflowActionTriggerSettings: {
     label: 'Enrich Company',
     icon: 'IconSparkles',

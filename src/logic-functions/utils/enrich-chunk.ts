@@ -304,7 +304,6 @@ export const enrichChunk = async <TNode, TData, TParams>({
     }
 
     try {
-      // oxlint-disable-next-line no-await-in-loop -- sequential: companyIdByMatchKeyCache must see prior writes to avoid duplicate companies
       const { mappedData, persistData } = await adapter.buildMatchedData({
         client,
         node: recordNode,

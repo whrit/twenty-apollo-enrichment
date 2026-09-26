@@ -1,6 +1,9 @@
 import { defineField, FieldType, STANDARD_OBJECT_UNIVERSAL_IDENTIFIERS } from 'twenty-sdk/define';
 
-import { APOLLO_FIELD_UNIVERSAL_IDENTIFIERS } from 'src/constants/universal-identifiers';
+import {
+  APOLLO_FIELD_UNIVERSAL_IDENTIFIERS,
+  APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS,
+} from 'src/constants/universal-identifiers';
 
 export default defineField({
   universalIdentifier: APOLLO_FIELD_UNIVERSAL_IDENTIFIERS.person.apolloSeniority,
@@ -13,72 +16,84 @@ export default defineField({
   isNullable: true,
   options: [
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.owner,
       value: 'OWNER',
       label: 'Owner',
       color: 'red',
       position: 0,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.founder,
       value: 'FOUNDER',
       label: 'Founder',
       color: 'purple',
       position: 1,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.cSuite,
       value: 'C_SUITE',
       label: 'C-Suite',
       color: 'blue',
       position: 2,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.partner,
       value: 'PARTNER',
       label: 'Partner',
       color: 'sky',
       position: 3,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.vp,
       value: 'VP',
       label: 'VP',
       color: 'green',
       position: 4,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.head,
       value: 'HEAD',
       label: 'Head',
       color: 'turquoise',
       position: 5,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.director,
       value: 'DIRECTOR',
       label: 'Director',
       color: 'orange',
       position: 6,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.manager,
       value: 'MANAGER',
       label: 'Manager',
       color: 'pink',
       position: 7,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.senior,
       value: 'SENIOR',
       label: 'Senior',
       color: 'yellow',
       position: 8,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.entry,
       value: 'ENTRY',
       label: 'Entry',
       color: 'cyan',
       position: 9,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.intern,
       value: 'INTERN',
       label: 'Intern',
       color: 'gray',
       position: 10,
     },
     {
+      id: APOLLO_SELECT_OPTION_UNIVERSAL_IDENTIFIERS.seniority.unpaid,
       value: 'UNPAID',
       label: 'Unpaid',
       color: 'brown',

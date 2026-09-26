@@ -43,7 +43,6 @@ export const apolloFetch = async ({
 }): Promise<ApolloFetchResult> => {
   const apiKey = getApolloApiKey();
 
-  /* oxlint-disable no-await-in-loop -- retry loop is sequential by design */
   for (let attempt = 0; ; attempt++) {
     let response: Response;
     try {
@@ -97,5 +96,4 @@ export const apolloFetch = async ({
 
     return { ok: true, httpStatus: response.status, json: responseObject };
   }
-  /* oxlint-enable no-await-in-loop */
 };
