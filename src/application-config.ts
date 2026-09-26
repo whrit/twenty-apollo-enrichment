@@ -13,12 +13,12 @@ export default defineApplication({
   universalIdentifier: APPLICATION_UNIVERSAL_IDENTIFIER,
   displayName: 'Apollo for Twenty',
   description: 'Enrich People and Companies with Apollo.io using your own Apollo API credits.',
-  logo: 'public/apollo-icon.png',
+  logo: 'public/icon.png',
   category: 'Enrichment',
-  author: 'YOUR_GITHUB_USERNAME',
+  author: 'whrit',
   galleryImages: ['public/gallery/cover.png'],
-  websiteUrl: 'https://github.com/YOUR_GITHUB_USERNAME/twenty-apollo-enrichment',
-  issueReportUrl: 'https://github.com/YOUR_GITHUB_USERNAME/twenty-apollo-enrichment/issues',
+  websiteUrl: 'https://github.com/whrit/twenty-apollo-enrichment',
+  issueReportUrl: 'https://github.com/whrit/twenty-apollo-enrichment/issues',
   applicationVariables: {
     APOLLO_API_KEY: {
       universalIdentifier: APOLLO_API_KEY_VARIABLE_UNIVERSAL_IDENTIFIER,
