@@ -6,7 +6,7 @@ const packageJson = JSON.parse(
 const appConfig = fs.readFileSync(new URL('../src/application-config.ts', import.meta.url), 'utf8');
 
 const text = JSON.stringify(packageJson) + appConfig;
-const placeholders = ['whrit'];
+const placeholders = ['YOUR_GITHUB_USERNAME'];
 
 for (const placeholder of placeholders) {
   if (text.includes(placeholder)) {
